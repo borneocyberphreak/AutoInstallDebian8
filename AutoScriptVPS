@@ -20,7 +20,7 @@ sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 apt-get update;apt-get -y install wget curl;
 
 # Local Time Manila
-ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # Local Configuration
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
@@ -176,12 +176,12 @@ service squid3 restart
 
 # Install WebMin
 cd
-apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python
+apt-get install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl apt-show-versions python -y
 wget "http://prdownloads.sourceforge.net/webadmin/webmin_1.670_all.deb"
 dpkg --install webmin_1.670_all.deb;
 apt-get -y -f install;
 rm /root/webmin_1.670_all.deb
-sed -i 's/ssl=0/ssl=0/g' /etc/webmin/miniserv.conf
+sed -i 's/ssl=0/ssl=1/g' /etc/webmin/miniserv.conf
 service webmin restart
 
 # Install Stunnel
