@@ -28,9 +28,9 @@
 wget -O AutoScriptVPS https://git.io/fh9d3 && chmod +x AutoScriptVPS && ./AutoScriptVPS
   </p>
   
-  <p align="center">
+  <h3 align="center">
 OR THIS WAY
-  </p>
+  </h3>
   
 <p align="center">
 wget -O AutoScriptVPS https://git.io/fh9d3
